@@ -203,8 +203,10 @@ DateTime::DateTime (const DateTime & c)
 
 DateTime::~DateTime ()
 {
-	delete _ut;
-	delete _data;
+	if (_ut != NULL) {
+		delete _ut;
+		delete _data;
+	}
 }
 
 
