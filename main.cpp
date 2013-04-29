@@ -12,10 +12,13 @@ int main() {
 	b = a - a.Diff(b);
 	cout << b << endl;
 
-	cout << a.get_week() << a.get_time(" неделя: w или W, дата: d.mM.y, год: Y, время: h:i:s\n");
+	cout << a.get_week() << a.get_time(" неделя: |w или |W, дата(date): |d.|m|M.|y, год: |Y, время: |h:|i:|s\n");
 
 	cout << "a = " << a << "\nb = " << b << "\n(a == b) = " << (a == b) << "\n(a < b) = " << (a < b) << 
 		"\n(a <= b) = " << (a <= b) << "\n(a > b) = " << (a > b) << "\n(a >= b) = " << (a >= b) << endl;
+
+	DateTime c("2050, 01, 02* &Ymd&m&i 03.04.05", "|Y, |m, |d* &Ymd&m&i |h.|i.|s");
+	cout << c << endl;
 //}
 
 	return 0;
